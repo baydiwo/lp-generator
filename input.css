@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Native High-Performance Base */
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+::selection {
+  background: #6366f1;
+  color: #ffffff;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ambient Glow Blobs - Zero-cost GPU Radial Rendering */
+.ambient-glow-brand {
+  position: absolute;
+  width: clamp(280px, 45vw, 600px);
+  height: clamp(280px, 45vw, 600px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.16) 0%,
+    rgba(59, 130, 246, 0.08) 35%,
+    rgba(79, 70, 229, 0.02) 60%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+  contain: paint;
+}
+
+/* Shimmer CTA Button Animation */
+@keyframes shine-anim {
+  0% {
+    left: -120%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  40% {
+    left: 140%;
+    opacity: 0;
+  }
+  100% {
+    left: 140%;
+    opacity: 0;
+  }
+}
+.shiny-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.shiny-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: shine-anim 3.2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Seamless Infinite Marquee with Hardware Acceleration */
+@keyframes scrollLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes scrollRight {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate-marquee-left {
+  animation: scrollLeft 40s linear infinite;
+  will-change: transform;
+}
+.animate-marquee-right {
+  animation: scrollRight 40s linear infinite;
+  will-change: transform;
+}
+@media (max-width: 768px) {
+  .animate-marquee-left {
+    animation-duration: 26s;
+  }
+  .animate-marquee-right {
+    animation-duration: 26s;
+  }
+}
+.pause-on-hover:hover,
+.pause-on-hover:active {
+  animation-play-state: paused;
+}
+
+/* Subtle Pulse */
+@keyframes subtle-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
+}
+.pulse-subtle {
+  animation: subtle-pulse 2.2s infinite ease-in-out;
+}
+
+/* Modern Surface Card Styling */
+.surface-border-card {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 41, 59, 0.88) 0%,
+    rgba(15, 23, 42, 0.96) 100%
+  );
+  border: 1px solid rgba(71, 85, 105, 0.55);
+  box-shadow:
+    0 10px 30px -5px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(99, 102, 241, 0.06);
+  transition: all 0.25s ease;
+}
+@media (hover: hover) {
+  .surface-border-card:hover {
+    border-color: rgba(129, 140, 248, 0.8);
+    box-shadow:
+      0 15px 35px -5px rgba(0, 0, 0, 0.7),
+      0 0 30px rgba(99, 102, 241, 0.18);
+    transform: translateY(-2px);
+  }
+}
+
+/* Accordion Rotate Icon */
+details[open] .faq-icon {
+  transform: rotate(180deg);
+  color: #818cf8;
+}
+
+/* Checklist Active State */
+.checklist-item.active {
+  border-color: #6366f1 !important;
+  background: rgba(99, 102, 241, 0.14) !important;
+}
+.checklist-item.active .check-icon {
+  color: #818cf8 !important;
+}
+
+/* Authentic Payment Badge Chips */
+.pay-chip-shopeepay {
+  background: #ee4d2d;
+  color: #fff;
+}
+.pay-chip-bca {
+  background: #003688;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -0.05em;
+  font-weight: 900;
+}
+.pay-chip-mandiri {
+  background: #002d62;
+  color: #fdb813;
+  font-weight: 900;
+}
+.pay-chip-bni {
+  background: #f15a24;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+.pay-chip-bri {
+  background: #00529c;
+  color: #fff;
+  font-weight: 900;
+}
+.pay-chip-bsi {
+  background: #00a39d;
+  color: #fff;
+  font-weight: 800;
+}
+.pay-chip-gopay {
+  background: #00aed6;
+  color: #fff;
+}
+.pay-chip-ovo {
+  background: #4c2a86;
+  color: #fff;
+}
+.pay-chip-dana {
+  background: #118eea;
+  color: #fff;
+}
+.pay-chip-qris {
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid #ddd;
+  font-weight: 900;
+}
+.pay-chip-qris .q-acc {
+  color: #e60012;
+}
+
+/* Zero-Cost GPU Parallax Container & Background Layer */
+.parallax-container {
+  position: relative;
+  clip-path: inset(0);
+  -webkit-clip-path: inset(0);
+}
+.parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  will-change: transform;
+  transform: translateZ(0);
+  z-index: 0;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "lp-generator",
+  "version": "1.0.0",
+  "description": "Scalev Static Landing Page Starter & Generator with Tailwind CSS and AI Agent Skills",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server",
+    "build": "node scripts/tailwind.js build",
+    "watch": "node scripts/tailwind.js watch",
+    "build:all": "node scripts/tailwind.js build-all",
+    "create": "node scripts/tailwind.js create",
+    "generate:css": "npm run build:all"
+  },
+  "keywords": [
+    "scalev",
+    "landing-page",
+    "tailwindcss",
+    "starter"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "prettier": "^3.8.4",
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scalev LP Generator — Local Dev Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/pages/sample-landing-page/output.css" />
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex items-center justify-center p-6">
+  <div class="max-w-xl w-full surface-border-card rounded-3xl p-8 text-center">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950 border border-indigo-500/40 text-xs font-bold uppercase tracking-widest text-indigo-300 mb-4">
+      Scalev Static LP Starter
+    </div>
+    <h1 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+      LP Generator Workspace
+    </h1>
+    <p class="text-sm sm:text-base text-slate-300 mb-6 leading-relaxed">
+      Seluruh halaman landing page berada di dalam direktori <code class="bg-slate-900 px-2 py-0.5 rounded text-amber-300 border border-slate-700">/src/pages/&lt;nama-halaman&gt;/</code>.
+    </p>
+
+    <div class="text-left bg-slate-900/90 border border-slate-800 rounded-2xl p-4 mb-6">
+      <p class="text-xs uppercase tracking-wider text-slate-400 font-bold mb-3">Halaman Tersedia:</p>
+      <a href="./src/pages/sample-landing-page/index.html" class="flex items-center justify-between p-3.5 rounded-xl bg-indigo-950/60 hover:bg-indigo-900/60 border border-indigo-500/40 transition">
+        <div>
+          <p class="font-bold text-white text-sm sm:text-base">sample-landing-page</p>
+          <p class="text-xs text-slate-300">src/pages/sample-landing-page/index.html</p>
+        </div>
+        <span class="text-amber-300 font-bold text-sm">Buka &rarr;</span>
+      </a>
+    </div>
+
+    <div class="text-left bg-slate-950/80 border border-slate-800 rounded-2xl p-4 text-xs text-slate-300 space-y-2 font-mono">
+      <p class="text-slate-400 font-sans font-bold uppercase tracking-wider">Quick Commands:</p>
+      <p><span class="text-amber-300">npm run create</span> nama-lp-baru</p>
+      <p><span class="text-amber-300">npm run watch</span> sample-landing-page</p>
+      <p><span class="text-amber-300">npm run build</span> sample-landing-page</p>
+    </div>
+  </div>
+</body>
+</html>
