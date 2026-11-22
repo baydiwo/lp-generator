@@ -369,3 +369,64 @@ details[open] .faq-icon {
 body.urgency-modal-open {
   overflow: hidden;
 }
+
+/* ==========================================================================
+   ELEGANT SCROLL-REVEAL SYSTEM (GPU-ACCELERATED & A11Y-COMPLIANT)
+   ========================================================================== */
+
+/* Only activate hidden initial states when JS observer is initialized */
+html.reveal-ready [data-reveal] {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition-property: transform, opacity;
+  transition-duration: 0.75s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.reveal-ready [data-reveal="fade-up"],
+html.reveal-ready [data-reveal=""] {
+  transform: translate3d(0, 24px, 0);
+}
+
+html.reveal-ready [data-reveal="fade-in"] {
+  transform: translate3d(0, 0, 0);
+}
+
+html.reveal-ready [data-reveal="zoom-in"] {
+  transform: translate3d(0, 16px, 0) scale(0.96);
+}
+
+html.reveal-ready [data-reveal="fade-right"] {
+  transform: translate3d(-24px, 0, 0);
+}
+
+html.reveal-ready [data-reveal="fade-left"] {
+  transform: translate3d(24px, 0, 0);
+}
+
+/* Revealed State */
+html.reveal-ready [data-reveal].is-revealed {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale(1) !important;
+}
+
+/* Elegant Stagger Delays */
+html.reveal-ready [data-reveal-delay="50"]  { transition-delay: 50ms; }
+html.reveal-ready [data-reveal-delay="100"] { transition-delay: 100ms; }
+html.reveal-ready [data-reveal-delay="150"] { transition-delay: 150ms; }
+html.reveal-ready [data-reveal-delay="200"] { transition-delay: 200ms; }
+html.reveal-ready [data-reveal-delay="250"] { transition-delay: 250ms; }
+html.reveal-ready [data-reveal-delay="300"] { transition-delay: 300ms; }
+html.reveal-ready [data-reveal-delay="350"] { transition-delay: 350ms; }
+html.reveal-ready [data-reveal-delay="400"] { transition-delay: 400ms; }
+html.reveal-ready [data-reveal-delay="500"] { transition-delay: 500ms; }
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html.reveal-ready [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
